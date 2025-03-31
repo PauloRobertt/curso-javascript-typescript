@@ -1,0 +1,12 @@
+body{
+    background-color: #1079d633;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: #ffff;
+    width: 30em;
+    padding: 1em;
+}
