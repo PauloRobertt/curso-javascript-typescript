@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="formulario.css">
+</head>
+
+<body>
+    <section>
+        <h1>Formulário de cadastro</h1>
+        <ul>
+            <li>
+                Nenhum campo pode estar vazio
+            </li>
+            <li>
+                Usuário só poderá conter letras e/ou números
+            </li>
+            <li>
+                Usuário deverá ter entre 3 e 12 caracteres
+            </li>
+            <li>
+                Senha precisa ter entre 6 e 12 caracteres
+            </li>
+        </ul>
+        <form class="formulario" method="post">
+            <div class="input">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" class="nome valid">
+            </div>
+
+            <div class="input">
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" id="sobrenome" class="sobrenome valid">
+            </div>
+
+            <div class="input">
+                <label for="cpf">CPF</label>
+                <input type="text" id="CPF" class="cpf valid">
+            </div>
+
+            <div class="input">
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuario" class="usuario valid">
+            </div>
+
+            <div class="input">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" class="senha valid">
+            </div>
+
+            <div class="input">
+                <label>Repetir senha</label>
+                <input type="password" id="repetirSenha" class="repetirsenha valid">
+            </div>
+
+            <button type="submit" class="buttonSubmit">Enviar</button>
+        </form>
+    </section>
+    
+    <script type="module" src="./validarCPF.js"></script>
+    <script type="module" src="./formulario.js"></script>
+</body>
+
+</html>
