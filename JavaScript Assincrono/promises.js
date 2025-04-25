@@ -23,14 +23,62 @@ function teste(msg, tempo) {
     })
 }
 
-teste('Frase 1', randowNumber(1, 3))
+// teste('Frase 1', randowNumber(1, 3))
+//     .then(res => {
+//         console.log(res);
+//         return teste('Frase 2', randowNumber(1, 3))
+//     })
+//     .then(res => {
+//         console.log(res);
+//     })
+//     .catch(e => {
+//         console.log(e)
+//     });
+
+//Metodos uteis para Promises
+
+/*
+Promise.all -> Resolve todas as promises dentro de um array e retorna seus resultados dentro de outro array
+
+Se ocorrer um erro em alguma promise dentro do array, sera retornado somente o erro.
+*/
+
+const promises = [
+    'Primeiro valor',
+    teste('Promise 1', randowNumber(1, 4)),
+    teste('Promise 2', randowNumber(1, 1)),
+    teste('Promise 3', randowNumber(1, 5)),
+    'Valor Final'
+]
+
+// Promise.all(promises)
+//     .then(res => {
+//         console.log(res)
+//     })
+//     .catch(e => {
+//         console.log(e)
+//     })
+/*
+Promise.race -> Similar ao all, retorna o valor da primeira promises que for concluida(Uma corrida)
+*/
+
+Promise.race(promises)
     .then(res => {
-        console.log(res);
-        return teste('Frase 2', randowNumber(1, 3))
-    })
-    .then(res => {
-        console.log(res);
+        console.log(res)
     })
     .catch(e => {
         console.log(e)
-    });
+    })
+
+/*
+Promise.resolve
+
+Retorna uma Promise já resolvida.
+
+Promise.reject
+
+Retorna uma promise rejeitada
+*/
+
+
+//Se queremos que a função pare de executar apos encontrar o reject ou resolve, basta colocar o return depois.
