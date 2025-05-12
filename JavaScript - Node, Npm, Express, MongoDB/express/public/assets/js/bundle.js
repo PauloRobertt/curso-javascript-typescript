@@ -133,8 +133,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-alert(1);
-console.log('Teste');
 
 /***/ }),
 
