@@ -5,7 +5,11 @@ const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-mongoose.connect(process.env.STRING_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.STRING_CONNECTION, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    family: 4
+})
     .then(() => {
         app.emit('conectado');
     })
