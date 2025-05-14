@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const routes = require('./routes.js');
 const app = express();
 
@@ -15,8 +16,26 @@ mongoose.connect(process.env.STRING_CONNECTION, {
     })
     .catch((error) => { console.log('Ocorreu um erro: ', error) })
 
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+const connectFlash = require('connect-flash');
+
 const path = require('path');
 app.use(express.static(path.resolve(__dirname, 'public')));
+
+const sessionOptions = session({
+    secret: process.env.KEY_SECRET,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 * 7,
+        httpOnly: true
+    }
+})
+
+app.use(sessionOptions);
+app.use(connectFlash())
 
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs')
