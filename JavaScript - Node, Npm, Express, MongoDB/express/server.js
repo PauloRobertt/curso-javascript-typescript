@@ -17,7 +17,7 @@ mongoose.connect(process.env.STRING_CONNECTION, {
     .catch((error) => { console.log('Ocorreu um erro: ', error) })
 
 const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo');
 const connectFlash = require('connect-flash');
 
 const path = require('path');
@@ -25,7 +25,9 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 
 const sessionOptions = session({
     secret: process.env.KEY_SECRET,
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    store: MongoStore.create({
+        mongoUrl: process.env.STRING_CONNECTION,
+    }),
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -40,6 +42,9 @@ app.use(connectFlash())
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs')
 
+const { middlewarGlobal } = require('./src/middlewares/middleware.js');
+
+app.use(middlewarGlobal)
 app.use(routes);
 
 app.on('conectado', () => {

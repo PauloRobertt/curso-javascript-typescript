@@ -1,24 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Modelo</title>
-</head>
-
-<body>
+<%- include('includes/Head'); %>
 
   <section class="container">
     <h1>
-      
-      <%= titulo %>
-      
+      <!-- Exibi exatamente oque escrever se houver tags ele vai exibir a tag inves de executar -->
+      <!-- <%=titulo%> -->
+
+      <!-- Executa o html -->
+      <!-- <%-titulo%> -->
+      <!-- Utilizando javascript puro ejs -->
+      <!-- <% console.log("Teste") %>
+        <% if(typeof titulo !=='undefined' ) { %>
+          <%= titulo %>
+            <% } else { %>
+              O titulo não foi enviado!
+              <% } %> -->
+
+      <% for(let numero of numeros) {%>
+        <%=numero%>
+          <%}%>
     </h1>
   </section>
 
-  <script src="./assets/js/bundle.js"></script>
-</body>
+  <%- include('includes/footer')%>
 
-</html>
+    <!-- 
+  <% Controle de fluxo(if, for...) %>
+  <%= Imprime escapando caracteres %>
+  <%- Imprime sem escapar caracteres %>
+  <%# Comentario%>
+  <%- include('caminho arquivo');%>
+  -->
