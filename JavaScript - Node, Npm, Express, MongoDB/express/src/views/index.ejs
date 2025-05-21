@@ -2,31 +2,11 @@
 
   <section class="container">
     <h1>
-      <!-- Exibi exatamente oque escrever se houver tags ele vai exibir a tag inves de executar -->
-      <!-- <%=titulo%> -->
-
-      <!-- Executa o html -->
-      <!-- <%-titulo%> -->
-      <!-- Utilizando javascript puro ejs -->
-      <!-- <% console.log("Teste") %>
-        <% if(typeof titulo !=='undefined' ) { %>
-          <%= titulo %>
-            <% } else { %>
-              O titulo não foi enviado!
-              <% } %> -->
-
-      <% for(let numero of numeros) {%>
-        <%=numero%>
-          <%}%>
+      <%= variavelLocal %>
     </h1>
+    <form action="/" method="post">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    </form>
   </section>
 
   <%- include('includes/footer')%>
-
-    <!-- 
-  <% Controle de fluxo(if, for...) %>
-  <%= Imprime escapando caracteres %>
-  <%- Imprime sem escapar caracteres %>
-  <%# Comentario%>
-  <%- include('caminho arquivo');%>
-  -->

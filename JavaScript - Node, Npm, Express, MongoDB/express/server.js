@@ -19,9 +19,11 @@ mongoose.connect(process.env.STRING_CONNECTION, {
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const connectFlash = require('connect-flash');
+const helmet = require('helmet');
 
 const path = require('path');
 app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(helmet());
 
 const sessionOptions = session({
     secret: process.env.KEY_SECRET,
@@ -42,9 +44,11 @@ app.use(connectFlash())
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs')
 
-const { middlewarGlobal } = require('./src/middlewares/middleware.js');
+const { middlewarGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware.js');
 
-app.use(middlewarGlobal)
+app.use(middlewarGlobal);
+app.use(checkCsrfError);
+app.use(csrfMiddleware);
 app.use(routes);
 
 app.on('conectado', () => {
