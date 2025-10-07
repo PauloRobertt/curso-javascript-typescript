@@ -3,7 +3,7 @@
     // File Layout
     // "rootDir": "./src",
     // OutDir -> Qual pasta sera utilizada para disponibilizar os arquivos de compilação
-    "outDir": "./dist",
+    "outDir": "./dist/assets/js",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
