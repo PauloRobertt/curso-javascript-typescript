@@ -2,8 +2,8 @@
   "compilerOptions": {
     // File Layout
     // "rootDir": "./src",
-    // OutDir -> Qual pasta sera utilizada para disponibilizar os arquivos de compilação
-    "outDir": "./dist",
+    // OutDir -> Qual pasta sera utilizada para disponibilizar os arquivos de compilaçãoa
+    "outDir": "./frontend/assets/js",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
