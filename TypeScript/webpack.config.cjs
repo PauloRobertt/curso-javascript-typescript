@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/A014-webpack/index.ts',
+  entry: path.resolve('src', 'A030-ExercicioVideo', 'A030-ExercicioVideo.ts'),
   module: {
     rules: [
       {
@@ -22,4 +22,5 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'frontend', 'assets', 'js'),
   },
+  devtool: 'source-map',
 };

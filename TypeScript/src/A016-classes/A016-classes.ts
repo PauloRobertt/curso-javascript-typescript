@@ -20,7 +20,10 @@ export class Empresa{
 }
 
 export class Colaborador{
-    constructor(public readonly name:string, public readonly sobrenome:string){
+    constructor(
+        public readonly name:string,
+        public readonly sobrenome:string
+    ){
         console.log('teste')
     }
 }

@@ -12,6 +12,7 @@
     "types": [],
     // For nodejs:
     "lib": ["esnext", "DOM"],
+    "removeComments": true,
     // "types": ["node"],
     // and npm install -D @types/node
 

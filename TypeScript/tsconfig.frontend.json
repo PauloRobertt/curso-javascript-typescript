@@ -3,7 +3,7 @@
     // File Layout
     // "rootDir": "./src",
     // OutDir -> Qual pasta sera utilizada para disponibilizar os arquivos de compilaçãoa
-    "outDir": "./frontend/assets/js",
+    "outDir": "./frontend/assets/js/A030-ExercicioVideo",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
@@ -42,6 +42,6 @@
     "moduleDetection": "force",
     "skipLibCheck": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/A030-ExercicioVideo"],
   "exclude": ["node_modules"]
 }

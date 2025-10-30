@@ -1,0 +1,50 @@
+:root {
+  --dark-color: #111;
+  --light-color: #f3f3f3;
+  --medium-color: #bbb;
+  --border-color: #ddd;
+  --main-color: #0074D9;
+  --error-color: #FF4136;
+  --border-radius: 4px;
+}
+
+body{
+    background-color: var(--dark-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerVideo{
+    background-color: var(--light-color);
+    padding: 1em;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentVideo{
+    position: relative;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.controls .start, .controls .stop{
+    transition: opacity 300ms ease-in-out;
+    color: var(--light-color);
+    background-color: var(--main-color);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    padding: .5em 1em;
+}
+
+.controls button:hover {
+  opacity: 1;
+}
