@@ -12,7 +12,7 @@
     "target": "esnext",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "types": [],
+    "types": ["jest"],
     // For nodejs:
     "lib": ["esnext", "DOM"],
     "removeComments": true,
