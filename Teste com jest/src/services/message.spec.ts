@@ -10,7 +10,7 @@ describe('Message', () => {
     expect(sut.sendMessage('Teste2')).toBeUndefined();
   });
 
-  it('Testando message', () => {
+  it('Should call console.log once', () => {
     // System under test
     const sut = createSut();
     const consoleSpy = jest.spyOn(console, 'log');
@@ -18,7 +18,7 @@ describe('Message', () => {
     expect(consoleSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('Testando message', () => {
+  it('Should call console.log with "Teste"', () => {
     // System under test
     const sut = createSut();
     const consoleSpy = jest.spyOn(console, 'log');
