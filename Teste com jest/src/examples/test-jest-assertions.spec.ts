@@ -34,6 +34,6 @@ describe('Objects', () => {
     expect(person).not.toHaveProperty('lastname');
     expect(person).toHaveProperty('age', 30);
 
-    expect(person.name).toBe('Luiz2');
+    expect(person.name).toBe('Luiz');
   });
 });
